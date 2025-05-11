@@ -1,14 +1,22 @@
 import { Link } from "react-router";
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
+import { AppTitle } from "lib/components/app-title";
 
 export function Welcome() {
   return (
     <main className="flex items-center justify-center pt-16 pb-4">
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
-        <div className="flex items-center gap-4">
-          <Link to="/hello-world">Hello World</Link>
-          <Link to="/goodbye-world">Goodbye World</Link>
+        <AppTitle />
+
+        <div className="flex items-center gap-4" id="nav">
+          <Link to="/hello-world" viewTransition>
+            Hello World
+          </Link>
+
+          <Link to="/goodbye-world" viewTransition>
+            Goodbye World
+          </Link>
         </div>
 
         <header className="flex flex-col items-center gap-9">

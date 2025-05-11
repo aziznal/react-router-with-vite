@@ -1,3 +1,4 @@
+import { AppTitle } from "lib/components/app-title";
 import { useState } from "react";
 import { Link } from "react-router";
 
@@ -8,6 +9,8 @@ export function GoodbyeWorld() {
 
   return (
     <main className="flex flex-col w-screen h-screen justify-center items-center">
+      <AppTitle />
+
       <h1 className="text-4xl font-extrabold mb-12">Goodbye World!</h1>
 
       <p className="mb-8">{counter}</p>
@@ -19,9 +22,13 @@ export function GoodbyeWorld() {
         Click Me!
       </button>
 
-      <div className="flex items-center gap-4">
-        <Link to="/">Home</Link>
-        <Link to="/hello-world">Hello World</Link>
+      <div className="flex items-center gap-4" id="nav">
+        <Link to="/" viewTransition>
+          Home
+        </Link>
+        <Link to="/hello-world" viewTransition>
+          Hello World
+        </Link>
       </div>
     </main>
   );
